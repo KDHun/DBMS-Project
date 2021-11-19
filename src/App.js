@@ -5,6 +5,7 @@ import Footer from './layout/Footer';
 import Student from './components/student/student';
 import Instructor from './components/Instructor/instructor';
 import Course from './components/Course/course';
+import ClassI from './components/ClassI/classi';
 function App() {
     return (
         <>
@@ -18,6 +19,7 @@ function App() {
             <Instructor id="201901137" name ="Karabhai Hun" dob="2002-04-18"  email="hun.karabhai@gmail.com" address="Porbandar-360575" gender="Male"  hieght="170" weight="60" health="good" joindate ="2019-05-05" pno="9106619122"/>
             
              <Course  />
+             <ClassI />
             <Footer />
         </>
     );
