@@ -1,7 +1,13 @@
+import { createRef } from 'react';
 import { Form, Button, Container } from 'react-bootstrap'
 import * as classes from './pages.module.css'
 function Login(props) {
-    //const 
+    const usernameRef = createRef();
+    const pwdRef = pwdRef();
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+    }
     return (
         <Container className={'mt-4 container-sm shadow p-3 my-4 ' + classes.customForm } style = {{'maxWidth': '450px'}}>
         <Form onSubmit={(e) => e.preventDefault()}>

@@ -1,0 +1,7 @@
+body {
+    background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('./download.png') ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: auto 70vh;
+  }
