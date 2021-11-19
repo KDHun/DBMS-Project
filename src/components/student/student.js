@@ -5,7 +5,7 @@ function Student(props) {
             <h1>Student Information</h1>
             <table className = {stu.table1}>
                 <tr className ={stu.colum1}>
-                    <td>ID</td>
+                    <td>Roll Number</td>
                     <td>{props.id}</td>
                 </tr>
                 <tr className= {stu.colum1}>

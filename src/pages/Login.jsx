@@ -3,7 +3,7 @@ import { Form, Button, Container } from 'react-bootstrap'
 import * as classes from './pages.module.css'
 function Login(props) {
     const usernameRef = createRef();
-    const pwdRef = pwdRef();
+    const pwdRef = createRef();
     const submitHandler = (e) => {
         e.preventDefault();
 
