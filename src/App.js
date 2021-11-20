@@ -14,13 +14,18 @@ function App() {
             </Header>
             <Routes>
                 <Route path="/login" element={<Login />} />
+                <Route path="/student" element={<Student />} />
+                <Route path="/instructor" element={<Instructor />} />
+                <Route path="/classes" element={<ClassI />} />
+                <Route path="/course" element={<Course />} />
+                <Route path="/fourm" element={<Fourm />} />
             </Routes>
-            {/* <Instructor /> */}
+            {/* <Instructor />
             <Student id="201901137" name ="Karabhai Hun" dob="2002-04-18" pno="9106619122" email="hun.karabhai@gmail.com" address="Porbandar-360575" gender="Male" CPI="7.00" hieght="170" weight="60" health="good" batch ="ICT" joindate ="2019-05-05"/>
             <Instructor id="201901137" name ="Karabhai Hun" dob="2002-04-18"  email="hun.karabhai@gmail.com" address="Porbandar-360575" gender="Male"  hieght="170" weight="60" health="good" joindate ="2019-05-05" pno="9106619122"/>
             <Fourm Qid = "00000007" Q = "This dummy dummy dummy dummy dummy dummy dummy dummy Question?" time="07:25:06" date="2019-05-01"/>
              <Course  />
-             <ClassI />
+             <ClassI /> */}
 
             <Footer />
         </>
