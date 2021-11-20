@@ -8,7 +8,7 @@ function Header(props) {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link href="/login">Login</Nav.Link>
-        <Nav.Link href="/">Home</Nav.Link>
+        
         <NavDropdown title="Institute" id="basic-nav-dropdown">
           <NavDropdown.Item href="/student">Student</NavDropdown.Item>
           <NavDropdown.Item href="/instructor">Instructor</NavDropdown.Item>
