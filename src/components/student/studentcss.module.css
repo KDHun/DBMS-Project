@@ -12,20 +12,26 @@
 }
 .table1{
    width: 100%; 
-   /* border: 2px solid black;
-   border-radius: 10px; */
+  border: 1px solid black;
+   /* border-radius: 10px;  */
 }
 .colum1{
     padding: 5px;
    margin-top: 2px;
    margin-bottom: 2px;
 }
-tr{
-    margin: 2px;
-}
+
 .tabletitle{
     font-size: large;
 
 }
-tr:nth-child(odd) {background-color: #adbbb8;}
+tr:nth-child(odd) {background-color: #8fd100;}
 tr:nth-child(even) {background-color: #ffffff;}
+
+h1{
+    background-color: #c4c4c4;
+    border: 1px solid black;
+}
+td{
+    padding-left: 25px;
+}

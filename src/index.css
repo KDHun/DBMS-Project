@@ -1,7 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Merienda:wght@700&display=swap');
 body {
     background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('./download.png') ;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: auto 70vh;
+  
+    font-family: 'Merienda', cursive !important;
   }

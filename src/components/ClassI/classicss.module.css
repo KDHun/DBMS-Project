@@ -1,3 +1,4 @@
+
 .div1{
     
     align-items: center;
@@ -12,20 +13,28 @@
 }
 .table1{
    width: 100%; 
-   /* border: 2px solid black;
-   border-radius: 10px; */
+  border: 1px solid black;
+   /* border-radius: 10px;  */
 }
 .colum1{
     padding: 5px;
    margin-top: 2px;
    margin-bottom: 2px;
 }
-tr{
-    margin: 2px;
-}
+
 .tabletitle{
     font-size: large;
 
 }
-tr:nth-child(odd) {background-color: #adbbb8;}
+tr:nth-child(odd) {background-color: #ebe9e7b0;}
 tr:nth-child(even) {background-color: #ffffff;}
+
+h1{
+    padding-left: 10px;
+    background-color: #000000;
+    border: 1px solid black;
+    color: #ffffff;
+}
+td{
+    padding-left: 25px;
+}
