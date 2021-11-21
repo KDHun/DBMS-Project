@@ -2,23 +2,29 @@ import { createRef } from 'react';
 import { Form, Button, Container } from 'react-bootstrap'
 import * as classes from './pages.module.css'
 import axios from 'axios';
+import { useNavigate, useRoutes } from 'react-router';
 
 function Login(props) {
     const usernameRef = createRef();
     const pwdRef = createRef();
+    const router = useNavigate();
     const submitHandler = (e) => {
         e.preventDefault();
         const username = usernameRef.current.value;
         const password = pwdRef.current.value;
         console.log("Sending Request");
         console.log({username, password});
-        axios.post('http://localhost:3002/login', {
+        axios.post('http://localhost:8000/login', {
             name: username,
             DOB: password
         }).then(res => {
             console.log(res);
+            props.onLogin(res.data.token);
+            router('/student'); 
         }).catch((err) => {
             console.log("Error");
+            console.log(err);
+            alert("Username or password incorrect");
         })
     }
     return (
