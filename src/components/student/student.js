@@ -6,7 +6,7 @@ function Student(props) {
             <table className = {stu.table1}>
                 <tr className ={stu.colum1}>
                     <td>Roll Number</td>
-                    <td>{props.id}</td>
+                    <td>{props.roll_number}</td>
                 </tr>
                 <tr className= {stu.colum1}>
                     <td>Name</td>
@@ -14,11 +14,11 @@ function Student(props) {
                 </tr>
                 <tr className= {stu.colum1}>
                     <td>Date of Birth</td>
-                    <td>{props.dob}</td>
+                    <td>{props.DOB}</td>
                 </tr>
                 <tr className ={stu.colum1}>
                     <td>Phone Number</td>
-                    <td>{props.pno}</td>
+                    <td>{props.phone_number}</td>
                 </tr>
                 <tr className ={stu.colum1}>
                     <td>Email</td>
@@ -46,7 +46,7 @@ function Student(props) {
                 </tr>
                 <tr className ={stu.colum1}>
                     <td>Health Condition</td>
-                    <td>{props.health}</td>
+                    <td>{props.health_condition}</td>
                 </tr>
                 <tr className ={stu.colum1}>
                     <td>Batch</td>
@@ -54,7 +54,7 @@ function Student(props) {
                 </tr>
                 <tr className ={stu.colum1}>
                     <td>Joining Date</td>
-                    <td>{props.joindate}</td>
+                    <td>{props.joining_date}</td>
                 </tr>
                     
             </table>

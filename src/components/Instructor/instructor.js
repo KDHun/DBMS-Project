@@ -14,7 +14,7 @@ function Instructor(props) {
                 </tr>
                 <tr className= {ins.colum1}>
                     <td>Date of Birth</td>
-                    <td>{props.dob}</td>
+                    <td>{props.DOB}</td>
                 </tr>
                 <tr className ={ins.colum1}>
                     <td>Email</td>
@@ -38,15 +38,15 @@ function Instructor(props) {
                 </tr>
                 <tr className ={ins.colum1}>
                     <td>Health Condition</td>
-                    <td>{props.health}</td>
+                    <td>{props.health_condition}</td>
                 </tr>
                 <tr className ={ins.colum1}>
                     <td>Joining Date</td>
-                    <td>{props.joindate}</td>
+                    <td>{props.joining_date}</td>
                 </tr>
                 <tr className ={ins.colum1}>
                     <td>Phone Number</td>
-                    <td>{props.pno}</td>
+                    <td>{props.phone_number}</td>
                 </tr>    
             </table>
             
