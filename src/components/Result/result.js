@@ -9,7 +9,7 @@ function Result (props) {
                 </tr>
                 <tr>
                     <td>Roll Number </td>
-                    <td>{props.id}</td>
+                    <td>{props.roll_number}</td>
                 </tr>
             </table>
             <h3 id={res.resulth1}>Congratulations...! You are Pass.</h3>

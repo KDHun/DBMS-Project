@@ -6,9 +6,9 @@ function Fourm(props) {
             <Card className={'text-center' + 'f.card'}>
             <Card.Header className = {f.header1}>Fourm</Card.Header>
             <Card.Body>
-                <Card.Title>Question ID :{props.Qid}</Card.Title>
+                <Card.Title>Question ID :{props.question_id}</Card.Title>
                 <Card.Text>
-                {props.Q}
+                {props.question}
                 </Card.Text>
                 <Card.Text>
                     Date : {props.date} Time : {props.time}

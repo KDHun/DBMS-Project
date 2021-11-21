@@ -7,7 +7,7 @@ function Header(props) {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="/login">Login</Nav.Link>
+        <Nav.Link href="/">Logout</Nav.Link>
         
         <NavDropdown title="Institute" id="basic-nav-dropdown">
           <NavDropdown.Item href="/student">Student</NavDropdown.Item>
