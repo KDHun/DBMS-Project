@@ -6,19 +6,19 @@ function ClassI(props) {
             <table className = {clas.table1}>
                 <tr className ={clas.colum1}>
                     <td>Class ID</td>
-                    <td>{props.classid}</td>
+                    <td>{props.class_id}</td>
                 </tr>
                 <tr className= {clas.colum1}>
                     <td>Course Code</td>
-                    <td>{props.coursecode}</td>
+                    <td>{props.course_code}</td>
                 </tr>
                 <tr className= {clas.colum1}>
                     <td>Start Date</td>
-                    <td>{props.startdate}</td>
+                    <td>{props.start_date}</td>
                 </tr>
                 <tr className ={clas.colum1}>
                     <td>Insrtuctor ID</td>
-                    <td>{props.instructorid}</td>
+                    <td>{props.instructor_id}</td>
                 </tr>
                 <tr className ={clas.colum1}>
                     <td>Description</td>

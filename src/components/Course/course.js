@@ -6,7 +6,7 @@ function Course(props) {
             <table className = {cour.table1}>
                 <tr className ={cour.colum1}>
                     <td>Course Code</td>
-                    <td>{props.coursecode}</td>
+                    <td>{props.course_code}</td>
                 </tr>
                 <tr className= {cour.colum1}>
                     <td>Name</td>
