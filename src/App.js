@@ -22,17 +22,28 @@ function App() {
       "Authorization"
     ] = `Bearer ${authState.token}`;
   }, [authState]);
+  const logout = () => {
+    setAuthState({
+      token: null,
+      name: null,
+      role: null,
+    });
+  };
   return (
     <>
       <authContext.Provider value={authState}>
         <Routes>
           {authState.token ? (
             <>
-              <Route path="/student" element={<Student />} />
-              <Route path="/student/class" element={<StudentClass />} />
-              <Route path="student/course" element={<StudentCourse />} />
-              <Route path="/instructor" element={<Instructor />} />
-              <Route path="/*" element={<Navigate to={`/${authState.role}`} />} />
+              <Route path="/student" element={<Student logout={logout} />} />
+              <Route
+                path="/instructor"
+                element={<Instructor logout={logout} />}
+              />
+              <Route
+                path="/*"
+                element={<Navigate to={`/${authState.role}`} />}
+              />
             </>
           ) : (
             <>
@@ -52,7 +63,7 @@ function App() {
                   </>
                 }
               />
-        
+
               <Route path="/*" element={<Navigate to="/" />} />
             </>
           )}
