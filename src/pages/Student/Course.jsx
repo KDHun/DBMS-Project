@@ -11,7 +11,7 @@ const StudentCourse = (props) => {
   useEffect(() => {
     console.log("Stop Updating Pls");
     axios
-      .get(`http://localhost:8000/class/${me.name}`)
+      .get(`http://localhost:8000/course/${me.name}`)
       .then((res) => setCourseData(res.data));
   }, [me]);
   return (

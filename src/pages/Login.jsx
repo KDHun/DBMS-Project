@@ -3,7 +3,7 @@ import { Form, Button, Container } from "react-bootstrap";
 import * as classes from "./pages.module.css";
 import axios from "axios";
 import parseJwt from "../utils/jwt";
-
+import Header from "../layout/Header";
 function Login(props) {
   const usernameRef = createRef();
   const pwdRef = createRef();
@@ -30,10 +30,12 @@ function Login(props) {
       });
   };
   return (
+    <>
+    <Header />
     <Container
       className={"mt-4 container-sm shadow p-3 my-4 " + classes.customForm}
-      style={{ maxWidth: "450px" }}
-    >
+      style={{ maxWidth: "450px" }}>
+      
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Username or ID</Form.Label>
@@ -60,6 +62,7 @@ function Login(props) {
         </Button>
       </Form>
     </Container>
+    </>
   );
 }
 export default Login;

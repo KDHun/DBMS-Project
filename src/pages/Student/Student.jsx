@@ -5,7 +5,7 @@ import Student from "../../components/student/student";
 import authContext from "../../context";
 import StudentHeader from "../../layout/StudentHeader";
 
-const InstructorPage = (props) => {
+const StudentPage = (props) => {
   const me = useContext(authContext);
   if (me.role !== "student") {
     Navigate(`/${me.role}`);
@@ -25,4 +25,4 @@ const InstructorPage = (props) => {
     </>
   );
 };
-export default InstructorPage;
+export default StudentPage;

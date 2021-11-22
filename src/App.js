@@ -32,6 +32,7 @@ function App() {
               <Route path="/student/class" element={<StudentClass />} />
               <Route path="student/course" element={<StudentCourse />} />
               <Route path="/instructor" element={<Instructor />} />
+              <Route path="/*" element={<Navigate to={`/${authState.role}`} />} />
             </>
           ) : (
             <>
@@ -51,6 +52,7 @@ function App() {
                   </>
                 }
               />
+        
               <Route path="/*" element={<Navigate to="/" />} />
             </>
           )}
