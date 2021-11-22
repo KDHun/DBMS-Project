@@ -5,7 +5,7 @@ import Instructor from "../../components/Instructor/instructor"
 import InstructorHeader from "../../layout/StudentHeader"
 import { Navigate } from "react-router";
 
-const StudentPage = (props) => {
+const InstructorPage = (props) => {
   const me = useContext(authContext);
   if(me.role !== 'instructor') {
     Navigate(`/${me.role}`)
@@ -25,4 +25,4 @@ const StudentPage = (props) => {
     </>
   );
 };
-export default StudentPage;
+export default InstructorPage;

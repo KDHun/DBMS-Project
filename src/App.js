@@ -3,9 +3,12 @@ import Login from "./pages/Login";
 import Footer from "./layout/Footer";
 import Student from "./pages/Student/Student";
 import Instructor from "./pages/Instructor/Instructor";
-import Admin from "./pages/Admin/Admin";
 import authContext from "./context";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import Header from "./layout/Header";
+import Image1 from "./components/images/image";
+import StudentClass from "./pages/Student/Classes";
+import StudentCourse from "./pages/Student/Course";
 import axios from "axios";
 
 function App() {
@@ -25,40 +28,10 @@ function App() {
         <Routes>
           {authState.token ? (
             <>
-              <Route
-                path="/student"
-                element={
-                  <Student
-                    logout={() =>
-                      setAuthState({ toke: null, name: null, role: null })
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/instructor"
-                element={
-                  <Instructor
-                    logout={() =>
-                      setAuthState({ toke: null, name: null, role: null })
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/admin"
-                element={
-                  <Admin
-                    logout={() =>
-                      setAuthState({ toke: null, name: null, role: null })
-                    }
-                  />
-                }
-              />
-              <Route
-                path="/*"
-                element={<Navigate to={`/${authState.role}`} />}
-              />
+              <Route path="/student" element={<Student />} />
+              <Route path="/student/class" element={<StudentClass />} />
+              <Route path="student/course" element={<StudentCourse />} />
+              <Route path="/instructor" element={<Instructor />} />
             </>
           ) : (
             <>
@@ -68,7 +41,17 @@ function App() {
                   <Login onLogin={(data) => setAuthState({ ...data })} />
                 }
               />
-              <Route path="/*" element={<Navigate to="/login" />} />
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Header />
+                    <Image1 />
+                    <Footer />
+                  </>
+                }
+              />
+              <Route path="/*" element={<Navigate to="/" />} />
             </>
           )}
         </Routes>
