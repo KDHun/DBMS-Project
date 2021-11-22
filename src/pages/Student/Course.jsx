@@ -3,22 +3,22 @@ import { useContext, useEffect, useState } from "react";
 
 import authContext from "../../context";
 import StudentHeader from '../../layout/StudentHeader'
-import ClassI from "../../components/ClassI/classi";
+import Course from "../../components/Course/course";
 
-const StudentClass = (props) => {
+const StudentCourse = (props) => {
   const me = useContext(authContext);
-  const [classData, setClassData] = useState({});
+  const [courseData, setCourseData] = useState({});
   useEffect(() => {
     console.log("Stop Updating Pls");
     axios
       .get(`http://localhost:8000/class/${me.name}`)
-      .then((res) => setClassData(res.data));
+      .then((res) => setCourseData(res.data));
   }, [me]);
   return (
     <>
       <StudentHeader />
-      < ClassI {...classData} />
+      <Course {...courseData} />
     </>
   );
 };
-export default StudentClass;
+export default StudentCourse;

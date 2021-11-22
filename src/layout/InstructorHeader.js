@@ -18,8 +18,8 @@ function Indexlogin(props) {
           <NavDropdown.Item onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}/quiz`)}}>Quizzes</NavDropdown.Item>
         </NavDropdown>
         <NavDropdown title="Info" id="basic-nav-dropdown">
-          <NavDropdown.Item onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}/course`)}}>Courses</NavDropdown.Item>
-          <NavDropdown.Item onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}/instructor`)}}>Instructors</NavDropdown.Item>
+          <NavDropdown.Item onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}/courses`)}}>Courses</NavDropdown.Item>
+          <NavDropdown.Item onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}/admin`)}}>Admins</NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>

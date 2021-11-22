@@ -4,7 +4,7 @@ import authContext from "../../context";
 import Instructor from "../../components/Instructor/instructor"
 import InstructorHeader from "../../layout/InstructorHeader"
 
-const StudentPage = (props) => {
+const InstructorPage = (props) => {
   const me = useContext(authContext);
   const [instructorData, setInstructorData] = useState({});
   useEffect(() => {
@@ -20,4 +20,4 @@ const StudentPage = (props) => {
     </>
   );
 };
-export default StudentPage;
+export default InstructorPage;

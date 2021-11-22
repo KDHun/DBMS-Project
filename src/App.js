@@ -2,9 +2,13 @@ import { Routes, Route, Navigate } from "react-router";
 import Login from "./pages/Login";
 import Footer from "./layout/Footer";
 import Student from "./pages/Student/Student";
-import Instructor from "./components/Instructor/instructor";
+import Instructor from "./pages/Instructor/Instructor";
 import authContext from "./context";
 import { useState } from "react";
+import Header from "./layout/Header";
+import Image1 from "./components/images/image";
+import StudentClass from "./pages/Student/Classes";
+import StudentCourse from "./pages/Student/Course";
 function App() {
   const [authState, setAuthState] = useState({
     token: null,
@@ -18,6 +22,8 @@ function App() {
           {authState.token ? (
             <>
               <Route path="/student" element={<Student />} />
+              <Route path="/student/class" element={<StudentClass />} />
+              <Route path="student/course" element={<StudentCourse />} />
               <Route path="/instructor" element={<Instructor />} />
             </>
           ) : (
@@ -28,7 +34,8 @@ function App() {
                   <Login onLogin={(data) => setAuthState({ ...data })} />
                 }
               />
-              <Route path="/*" element={<Navigate to="/login" />} />
+              <Route path="/" element={<><Header/><Image1 /><Footer/></>}/>
+              <Route path="/*" element={<Navigate to="/" />} />
             </>
           )}
         </Routes>
