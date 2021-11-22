@@ -2,7 +2,7 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 
 import authContext from "../../context";
-import StudentHeader from "../../layout/StudentHeader";
+
 import ClassI from "../../components/ClassI/classi";
 
 const StudentClass = (props) => {
