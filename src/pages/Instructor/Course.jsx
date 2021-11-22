@@ -1,11 +1,11 @@
 import Button from "@restart/ui/esm/Button";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-
+import * as bt from './course.module.css';
 import CourseList from "../../components/Course/CourseList";
 import authContext from "../../context";
 
-const StudentCourse = (props) => {
+const InstructorCourse = (props) => {
   const me = useContext(authContext);
   const [courseData, setCourseData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
@@ -25,9 +25,9 @@ const StudentCourse = (props) => {
       <CourseList
         course={courseData.slice(pageNumber * 10, (pageNumber + 1) * 10)}
       />
-      <Button onClick={prevPage}> PrevPage </Button>
-      <Button onClick={nextPage}> NextPage </Button>
+      <Button className={bt.btn} onClick={prevPage}> PrevPage </Button>
+      <Button className={bt.btn} onClick={nextPage}> NextPage </Button>
     </>
   );
 };
-export default StudentCourse;
+export default InstructorCourse;

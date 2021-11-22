@@ -1,12 +1,12 @@
-import * as ins from './instructorcss.module.css'
-function Instructor(props) {
+import * as ins from './admincss.module.css'
+function Admin(props) {
     return(
         <div className= {ins.div1}>
-            <h1>Instructor Information</h1>
+            <h1>Admin Information</h1>
             <table className = {ins.table1}>
                 <tr className ={ins.colum1}>
                     <td>ID</td>
-                    <td>{props.id}</td>
+                    <td>{props.user_name}</td>
                 </tr>
                 <tr className= {ins.colum1}>
                     <td>Name</td>
@@ -16,6 +16,10 @@ function Instructor(props) {
                     <td>Date of Birth</td>
                     <td>{props.DOB}</td>
                 </tr>
+                <tr className ={ins.colum1}>
+                    <td>Phone Number</td>
+                    <td>{props.phone_number}</td>
+                </tr> 
                 <tr className ={ins.colum1}>
                     <td>Email</td>
                     <td>{props.email}</td>
@@ -44,17 +48,14 @@ function Instructor(props) {
                     <td>Joining Date</td>
                     <td>{props.joining_date}</td>
                 </tr>
-                <tr className ={ins.colum1}>
-                    <td>Phone Number</td>
-                    <td>{props.phone_number}</td>
-                </tr>    
+                   
             </table>
             
 
         </div>
     );
 }
-export default Instructor;
+export default Admin;
 
 
 
