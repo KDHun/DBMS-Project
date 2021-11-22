@@ -3,12 +3,10 @@ import { Form, Button, Container } from "react-bootstrap";
 import * as classes from "./pages.module.css";
 import axios from "axios";
 import parseJwt from "../utils/jwt";
-import { useNavigate } from "react-router";
 
 function Login(props) {
   const usernameRef = createRef();
   const pwdRef = createRef();
-  const pushRoute = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     const username = usernameRef.current.value;
@@ -24,7 +22,6 @@ function Login(props) {
         const obj = parseJwt(res.data.token);
         console.log(obj)
         props.onLogin({ token: res.data.token, ...obj });
-        pushRoute(`/${obj.role}`);
       })
       .catch((err) => {
         console.log("Error");
