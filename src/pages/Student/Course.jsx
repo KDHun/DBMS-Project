@@ -23,10 +23,10 @@ const StudentCourse = (props) => {
   return (
     <>
       <CourseList
-        course={courseData.slice(pageNumber * 10, 10)}
+        course={courseData.slice(pageNumber * 10, (pageNumber + 1) * 10)}
       />
-      <Button onClick={nextPage}> NextPage </Button>
       <Button onClick={prevPage}> PrevPage </Button>
+      <Button onClick={nextPage}> NextPage </Button>
     </>
   );
 };
