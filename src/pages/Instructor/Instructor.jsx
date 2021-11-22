@@ -12,12 +12,10 @@ const InstructorPage = (props) => {
   }
   const [instructorData, setInstructorData] = useState({});
   useEffect(() => {
-    console.log("Stop Updating Pls");
     axios
       .get(`http://localhost:8000/instructor/${me.name}`)
       .then((res) => setInstructorData(res.data));
   }, [me]);
-  console.log(instructorData);
   return (
     <>
       <InstructorHeader logout={props.logout}/>

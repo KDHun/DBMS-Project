@@ -12,10 +12,9 @@ const AdminPage = (props) => {
   }
   const [adminData, setAdminData] = useState({});
   useEffect(() => {
-    console.log("Stop Updating Pls");
     axios
       .get(`http://localhost:8000/admin/${me.name}`, {
-        
+
       })
       .then((res) => setAdminData(res.data));
   }, [me]);

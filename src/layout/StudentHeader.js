@@ -5,7 +5,6 @@ import authContext from "../context";
 function Indexlogin(props) {
   const authData = useContext(authContext);
   const pushRoute = useNavigate();
-  console.log(props);
   return (
     <Navbar bg="dark" variant="dark" expand="lg" text="light">
       <Container>

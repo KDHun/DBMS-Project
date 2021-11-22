@@ -7,8 +7,6 @@ import authContext from "./context";
 import { useState, useEffect } from "react";
 import Header from "./layout/Header";
 import Image1 from "./components/images/image";
-import StudentClass from "./pages/Student/Classes";
-import StudentCourse from "./pages/Student/Course";
 import axios from "axios";
 
 function App() {
@@ -35,9 +33,9 @@ function App() {
         <Routes>
           {authState.token ? (
             <>
-              <Route path="/student" element={<Student logout={logout} />} />
+              <Route path="/student/*" element={<Student logout={logout} />} />
               <Route
-                path="/instructor"
+                path="/instructor/*"
                 element={<Instructor logout={logout} />}
               />
               <Route

@@ -11,8 +11,6 @@ function Login(props) {
     e.preventDefault();
     const username = usernameRef.current.value;
     const password = pwdRef.current.value;
-    console.log("Sending Request");
-    console.log({ username, password });
     axios
       .post("http://localhost:8000/login", {
         name: username,
@@ -20,11 +18,9 @@ function Login(props) {
       })
       .then((res) => {
         const obj = parseJwt(res.data.token);
-        console.log(obj)
         props.onLogin({ token: res.data.token, ...obj });
       })
       .catch((err) => {
-        console.log("Error");
         console.log(err);
         alert("Username or password incorrect");
       });
