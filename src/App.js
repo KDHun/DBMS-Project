@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router";
 import Login from "./pages/Login";
 import Footer from "./layout/Footer";
 import Student from "./pages/Student/Student";
+import Admin from "./pages/Admin/Admin";
 import Instructor from "./pages/Instructor/Instructor";
 import authContext from "./context";
 import { useState, useEffect } from "react";
@@ -38,6 +39,7 @@ function App() {
                 path="/instructor/*"
                 element={<Instructor logout={logout} />}
               />
+              <Route path="/admin/*" element={<Admin logout={logout} />} />
               <Route
                 path="/*"
                 element={<Navigate to={`/${authState.role}`} />}

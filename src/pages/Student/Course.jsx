@@ -1,7 +1,6 @@
 import Button from "@restart/ui/esm/Button";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import { useStore } from "react-redux";
 import CourseList from "../../components/Course/CourseList";
 import authContext from "../../context";
 
