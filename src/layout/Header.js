@@ -1,25 +1,28 @@
 import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap';
+import { useNavigate } from 'react-router';
 
-function Header(props) {
-  return (<Navbar bg="dark" variant="dark" expand="lg" text="light">
+function Header() {
+ 
+  const pushRoute = useNavigate();
+  return (
+  <Navbar bg="dark" variant="dark" expand="lg" text="light" >
   <Container>
-    <Navbar.Brand href="#home">E-learning</Navbar.Brand>
+    <Navbar.Brand onClick={(e) => {e.preventDefault(); pushRoute(`/`)}}>E-learning</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="/">Logout</Nav.Link>
-        
-        <NavDropdown title="Institute" id="basic-nav-dropdown">
-          <NavDropdown.Item href="/student">Student</NavDropdown.Item>
-          <NavDropdown.Item href="/instructor">Instructor</NavDropdown.Item>
-          <NavDropdown.Item href="/classes">Classes</NavDropdown.Item>
-          <NavDropdown.Item href="/course">Course</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="/fourm">Forum</NavDropdown.Item>
+
+        <Nav.Link onClick={(e) => {e.preventDefault(); pushRoute(`/`)}}>Home</Nav.Link>
+        <NavDropdown title="Login As" id="basic-nav-dropdown">
+          <NavDropdown.Item onClick={(e) => {e.preventDefault(); pushRoute(`/login`)}}>Student</NavDropdown.Item>
+          <NavDropdown.Item onClick={(e) => {e.preventDefault(); pushRoute(`/login`)}}>Instructor</NavDropdown.Item>
+          <NavDropdown.Item onClick={(e) => {e.preventDefault(); pushRoute(`/login`)}}>Admin</NavDropdown.Item>
+
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
   </Container>
-</Navbar>)
+</Navbar>
+)
 }
 export default Header;

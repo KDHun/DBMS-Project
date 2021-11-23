@@ -1,89 +1,72 @@
-import Header from "./layout/Header";
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Login from "./pages/Login";
 import Footer from "./layout/Footer";
-import Student from "./pages/Student";
-import Instructor from "./components/Instructor/instructor";
-import Course from "./components/Course/course";
-import ClassI from "./components/ClassI/classi";
-import Fourm from "./components/Fourm/fourm";
-import Indexlogin from "./components/IndexPage/ipage";
-import Header1 from "./layout/Header1";
+import Student from "./pages/Student/Student";
+import Admin from "./pages/Admin/Admin";
+import Instructor from "./pages/Instructor/Instructor";
 import authContext from "./context";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Header from "./layout/Header";
+import Image1 from "./components/images/image";
+import axios from "axios";
+
 function App() {
-  const [authState, setAuthState] = useState({ token: null });
+  const [authState, setAuthState] = useState({
+    token: null,
+    name: null,
+    role: null,
+  });
+  useEffect(() => {
+    axios.defaults.headers.common[
+      "Authorization"
+    ] = `Bearer ${authState.token}`;
+  }, [authState]);
+  const logout = () => {
+    setAuthState({
+      token: null,
+      name: null,
+      role: null,
+    });
+  };
   return (
     <>
-      {authState.token
-        ? "You are now authenticated"
-        : "You are not autenticated"}
       <authContext.Provider value={authState}>
         <Routes>
-          <Route path="/" element={<Indexlogin />} />
-          <Route
-            path="/login"
-            element={
-              <>
-                <Header1 />
-                <Login onLogin={(token) => setAuthState({ token })} />
-              </>
-            }
-          />
-          <Route
-            path="/ilogin"
-            element={
-              <>
-                <Header />
-                <Login />
-              </>
-            }
-          />
-          <Route
-            path="/student"
-            element={
-              <>
-                <Header />
-                <Student />
-              </>
-            }
-          />
-          <Route
-            path="/instructor"
-            element={
-              <>
-                <Header />
-                <Instructor />
-              </>
-            }
-          />
-          <Route
-            path="/classes"
-            element={
-              <>
-                <Header />
-                <ClassI />
-              </>
-            }
-          />
-          <Route
-            path="/course"
-            element={
-              <>
-                <Header />
-                <Course />
-              </>
-            }
-          />
-          <Route
-            path="/fourm"
-            element={
-              <>
-                <Header />
-                <Fourm />
-              </>
-            }
-          />
+          {authState.token ? (
+            <>
+              <Route path="/student/*" element={<Student logout={logout} />} />
+              <Route
+                path="/instructor/*"
+                element={<Instructor logout={logout} />}
+              />
+              <Route path="/admin/*" element={<Admin logout={logout} />} />
+              <Route
+                path="/*"
+                element={<Navigate to={`/${authState.role}`} />}
+              />
+            </>
+          ) : (
+            <>
+              <Route
+                path="/login"
+                element={
+                  <Login onLogin={(data) => setAuthState({ ...data })} />
+                }
+              />
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Header />
+                    <Image1 />
+                    <Footer />
+                  </>
+                }
+              />
+
+              <Route path="/*" element={<Navigate to="/" />} />
+            </>
+          )}
         </Routes>
         <Footer />
       </authContext.Provider>
