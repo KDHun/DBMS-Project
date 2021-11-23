@@ -4,6 +4,7 @@ function Instructor(props) {
     <div className={ins.div1}>
         <h3>Admin Information</h3>
       <table className={ins.table1}>
+        <tbody>
         <tr className={ins.colum1}>
           <td>Username</td>
           <td>{props.user_name}</td>
@@ -44,6 +45,7 @@ function Instructor(props) {
           <td>Joining Date</td>
           <td>{props.joining_date}</td>
         </tr>
+        </tbody>
       </table>
     </div>
   );

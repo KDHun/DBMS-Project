@@ -40,17 +40,17 @@ function Indexlogin(props) {
               <NavDropdown.Item
                 onClick={(e) => {
                   e.preventDefault();
-                  authData.role && pushRoute(`/${authData.role}/quiz`);
+                  authData.role && pushRoute(`/${authData.role}/enrolled`);
                 }}
               >
-                Quizzes
+                Enrolled Courses
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Info" id="basic-nav-dropdown">
               <NavDropdown.Item
                 onClick={(e) => {
                   e.preventDefault();
-                  authData.role && pushRoute(`/${authData.role}/course`);
+                  authData.role && pushRoute(`/${authData.role}/courses`);
                 }}
               >
                 Courses

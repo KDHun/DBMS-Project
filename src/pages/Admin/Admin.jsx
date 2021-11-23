@@ -4,7 +4,12 @@ import authContext from "../../context";
 import Admin from "../../components/Admin/Admin";
 import AdminHeader from "../../layout/AdminHeader";
 import AddStudent from "./AddStudent";
+import AddInstructor from "./AddInstructor";
+import AddCourse from "./AddCourse";
+import Student from "./Student";
+import Course from "../Student/Course";
 import { Navigate, Routes, Route } from "react-router";
+import Instructor from "../Student/Instructor";
 
 const AdminPage = (props) => {
   const me = useContext(authContext);
@@ -23,7 +28,11 @@ const AdminPage = (props) => {
       <Routes>
         <Route path="/" element={<Admin {...adminData} />} />
         <Route path="/add-student" element={<AddStudent />} />
-        <Route path="/add-instructor" element={<Admin {...adminData} />} />
+        <Route path="/add-instructor" element={<AddInstructor />} />
+        <Route path="/add-course" element={<AddCourse />} />
+        <Route path="/course" element={<Course />} />
+        <Route path="/student" element={<Student />} />
+        <Route path="/instructor" element={<Instructor />} />
       </Routes>
     </>
   );

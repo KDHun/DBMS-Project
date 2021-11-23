@@ -38,6 +38,7 @@ function AddInstructor(props) {
       joining_date: joiningRef.current.value,
     };
     axios.post("http://localhost:8000/instructor", data).then((res) => {
+      prompt("Insturctor Data added successfully");
       console.log("Data Submitted Successfully");
       console.log(res);
     });

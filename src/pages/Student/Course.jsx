@@ -19,6 +19,7 @@ const StudentCourse = (props) => {
       .get(`http://localhost:8000/course`)
       .then((res) => setCourseData(res.data));
   }, [me]);
+  console.log(courseData);
   return (
     <>
       <CourseList

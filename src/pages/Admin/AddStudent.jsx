@@ -42,6 +42,7 @@ function AddStudent(props) {
       joining_date: joiningRef.current.value,
     };
     axios.post("http://localhost:8000/student", data).then((res) => {
+      prompt("Sutdent Data added successfully");
       console.log("Data Submitted Successfully");
       console.log(res);
     });

@@ -30,6 +30,7 @@ function AddCourse(props) {
       description: descriptionRef.current.value,
     };
     axios.post("http://localhost:8000/course", data).then((res) => {
+      prompt("Course Data added successfully");
       console.log("Data Submitted Successfully");
       console.log(res);
     });

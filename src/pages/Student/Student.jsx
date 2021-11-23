@@ -5,9 +5,10 @@ import Student from "../../components/student/student";
 import authContext from "../../context";
 import StudentHeader from "../../layout/StudentHeader";
 import Class from "./Classes";
+import ClassInfo from "./ClassInfo";
 import Course from "./Course";
-// import Instructor from "./Instructor.jsx";
-// import Quiz from "./Quiz";
+import Instructor from "./Instructor.jsx";
+import Enrolled from "./Enrolled";
 
 const StudentPage = (props) => {
   const me = useContext(authContext);
@@ -26,9 +27,10 @@ const StudentPage = (props) => {
       <Routes>
         <Route path="/" element={<Student {...studentData} />} />
         <Route path="/class" element={<Class />} />
-        <Route path="/course" element={<Course />} />
-        {/* <Route path="/quiz" element={<Quiz />} /> */}
-        {/* <Route path="/instructor" element={<Instructor />} /> */}
+        <Route path="/class/:id" element={<ClassInfo />} />
+        <Route path="/courses" element={<Course />} />
+        <Route path="/instructor" element={<Instructor />} />
+        <Route path="/enrolled" element={<Enrolled />} />
       </Routes>
     </>
   );
