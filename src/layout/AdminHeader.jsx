@@ -28,29 +28,38 @@ function Indexlogin(props) {
             >
               Logout
             </Nav.Link>
-            <NavDropdown title="Semester" id="basic-nav-dropdown">
+            <NavDropdown title="Add Items" id="basic-nav-dropdown">
               <NavDropdown.Item
                 onClick={(e) => {
                   e.preventDefault();
-                  authData.role && pushRoute(`/${authData.role}/class`);
+                  authData.role && pushRoute(`/${authData.role}/add-student`);
                 }}
               >
-                Classes
+                Add Student
               </NavDropdown.Item>
               <NavDropdown.Item
                 onClick={(e) => {
                   e.preventDefault();
-                  authData.role && pushRoute(`/${authData.role}/enrolled`);
+                  authData.role &&
+                    pushRoute(`/${authData.role}/add-instructor`);
                 }}
               >
-                Enrolled Courses
+                Add Instructor
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                onClick={(e) => {
+                  e.preventDefault();
+                  authData.role && pushRoute(`/${authData.role}/add-course`);
+                }}
+              >
+                Add Course
               </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown title="Info" id="basic-nav-dropdown">
               <NavDropdown.Item
                 onClick={(e) => {
                   e.preventDefault();
-                  authData.role && pushRoute(`/${authData.role}/courses`);
+                  authData.role && pushRoute(`/${authData.role}/course`);
                 }}
               >
                 Courses
@@ -62,6 +71,14 @@ function Indexlogin(props) {
                 }}
               >
                 Instructors
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                onClick={(e) => {
+                  e.preventDefault();
+                  authData.role && pushRoute(`/${authData.role}/student`);
+                }}
+              >
+                Students
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

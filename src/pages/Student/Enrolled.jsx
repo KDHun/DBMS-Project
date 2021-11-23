@@ -12,14 +12,14 @@ const StudentCourse = (props) => {
     if (pageNumber >= 1) setPageNumber(pageNumber - 1);
   };
   const nextPage = () => {
-    if (pageNumber <= 10) setPageNumber(pageNumber + 1);
+    if (pageNumber <= Math.ceil(courseData.size() / 10))
+      setPageNumber(pageNumber + 1);
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/course`)
+      .get(`http://localhost:8000/course/my`)
       .then((res) => setCourseData(res.data));
   }, [me]);
-  console.log(courseData);
   return (
     <>
       <CourseList

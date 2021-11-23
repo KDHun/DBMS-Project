@@ -1,12 +1,12 @@
 import Button from "@restart/ui/esm/Button";
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
-import CourseList from "../../components/Course/CourseList";
+import InstructorList from "../../components/Instructor/InstructorList";
 import authContext from "../../context";
 
-const StudentCourse = (props) => {
+const Instructor = (props) => {
   const me = useContext(authContext);
-  const [courseData, setCourseData] = useState([]);
+  const [instructorData, setInstructorData] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
   const prevPage = () => {
     if (pageNumber >= 1) setPageNumber(pageNumber - 1);
@@ -16,18 +16,17 @@ const StudentCourse = (props) => {
   };
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/course`)
-      .then((res) => setCourseData(res.data));
+      .get(`http://localhost:8000/instructor`)
+      .then((res) => setInstructorData(res.data));
   }, [me]);
-  console.log(courseData);
   return (
     <>
-      <CourseList
-        course={courseData.slice(pageNumber * 10, (pageNumber + 1) * 10)}
+      <InstructorList
+        instructor={instructorData.slice(pageNumber * 10, (pageNumber + 1) * 10)}
       />
       <Button onClick={prevPage}> PrevPage </Button>
       <Button onClick={nextPage}> NextPage </Button>
     </>
   );
 };
-export default StudentCourse;
+export default Instructor;

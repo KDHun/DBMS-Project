@@ -1,4 +1,4 @@
-import * as qui from './quizcss.module.css'
+import * as qui from "./quizcss.module.css";
 function Quiz(props) {
     return(
         <div className= {qui.div1}>
@@ -50,9 +50,3 @@ function Quiz(props) {
     );
 }
 export default Quiz;
-
-
-
-
-
-
