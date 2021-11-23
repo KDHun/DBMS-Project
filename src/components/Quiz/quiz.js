@@ -25,23 +25,20 @@ function Quiz(props) {
                     <td>{props.deadline}</td>
                 </tr>
                 <tr className ={qui.colum1}>
-                    <td>Lectuer</td>
+                    <td>Plateform</td>
                     <td>{props.plateform}</td>
                 </tr>
                 <tr className ={qui.colum1}>
-                    <td>Lectuer</td>
-                    <td>{props.link}</td>
+                    <td>Link</td>
+                    <td><a href={props.link} target="_blank" >Quiz Link</a></td>
                 </tr>
                 <tr className ={qui.colum1}>
-                    <td>Lectuer</td>
+                    <td>Total Marks</td>
                     <td>{props.total_mark}</td>
                 </tr>
+               
                 <tr className ={qui.colum1}>
-                    <td>Lectuer</td>
-                    <td>{props.desctiption}</td>
-                </tr>
-                <tr className ={qui.colum1}>
-                    <td>Lectuer</td>
+                    <td>Date</td>
                     <td>{props.date}</td>
                 </tr>
 

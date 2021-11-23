@@ -7,6 +7,7 @@ import InstructorHeader from "../../layout/InstructorHeader";
 import InstructorClass from "../Instructor/Classes";
 import InstructorCourse from "../Instructor/Course";
 import InstructorQuiz from "../Instructor/Quiz";
+import InstructorAdmin from "../Instructor/Admin";
 // import Instructor from "./Instructor.jsx";
 // import Quiz from "./Quiz";
 
@@ -29,7 +30,7 @@ const InstructorPage = (props) => {
         <Route path="/class" element={<InstructorClass />} />
         <Route path="/course" element={<InstructorCourse />} />
         <Route path="/quiz" element={<InstructorQuiz />} />
-        {/* <Route path="/admin" element={<Admin />} /> */}
+        <Route path="/admin" element={<InstructorAdmin />} />
       </Routes>
     </>
   );

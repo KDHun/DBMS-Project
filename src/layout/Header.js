@@ -1,13 +1,11 @@
-
 import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap';
 import { useNavigate } from 'react-router';
-
 
 function Header() {
  
   const pushRoute = useNavigate();
   return (
-  <Navbar bg="dark" variant="dark" expand="lg" text="light">
+  <Navbar bg="dark" variant="dark" expand="lg" text="light" >
   <Container>
     <Navbar.Brand onClick={(e) => {e.preventDefault(); pushRoute(`/`)}}>E-learning</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />

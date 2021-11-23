@@ -2,11 +2,13 @@ import { useContext } from 'react';
 import {Navbar, Nav, NavDropdown, Container} from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import authContext from '../context';
+import * as fn from './Headercss.module.css';
 function Indexlogin(props) {
   const authData = useContext(authContext);
   const pushRoute = useNavigate();
   return (
-  <Navbar bg="dark" variant="dark" expand="lg" text="light">
+    <div className = {fn.fixnav}>
+  <Navbar bg="dark" variant="dark" expand="lg" text="light" >
   <Container>
     <Navbar.Brand href="#home">E-learning</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,6 +28,7 @@ function Indexlogin(props) {
   </Container>
 </Navbar>
 
+    </div>
 )
 }
 export default Indexlogin;
