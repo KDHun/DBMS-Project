@@ -1,5 +1,6 @@
 import * as cour from "./coursecss.module.css";
 function Course(props) {
+
   return (
     <div className={cour.div1}>
       <h1>Course Information</h1>
@@ -33,5 +34,6 @@ function Course(props) {
       </table>
     </div>
   );
+
 }
 export default Course;

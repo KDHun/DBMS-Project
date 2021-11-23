@@ -25,5 +25,6 @@ function ClassI(props) {
       </table>
     </div>
   );
+
 }
 export default ClassI;
