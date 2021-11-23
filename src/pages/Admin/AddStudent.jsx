@@ -9,8 +9,10 @@ import {
   Button,
 } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 function AddStudent(props) {
+  const pushRoute = useNavigate();
   const rollRef = createRef();
   const nameRef = createRef();
   const DOBRef = createRef();
@@ -42,7 +44,7 @@ function AddStudent(props) {
       joining_date: joiningRef.current.value,
     };
     axios.post("http://localhost:8000/student", data).then((res) => {
-      prompt("Sutdent Data added successfully");
+      pushRoute("/admin");
       console.log("Data Submitted Successfully");
       console.log(res);
     });
@@ -94,7 +96,7 @@ function AddStudent(props) {
           <Form.Select ref={genderRef}>
             <option>Select Gender</option>
             <option value="male">Male</option>
-            <option value="female">Male</option>
+            <option value="female">Female</option>
             <option value="other">Other</option>
           </Form.Select>
         </FormGroup>
@@ -111,7 +113,7 @@ function AddStudent(props) {
           <FormLabel>Height</FormLabel>
           <FormControl
             type="number"
-            placeholder="Enter Weight"
+            placeholder="Enter Height"
             ref={heightRef}
           />
         </FormGroup>
@@ -119,7 +121,7 @@ function AddStudent(props) {
           <FormLabel>Weight</FormLabel>
           <FormControl
             type="number"
-            placeholder="Enter Name"
+            placeholder="Enter Weight"
             ref={weightRef}
             step="0.1"
           />

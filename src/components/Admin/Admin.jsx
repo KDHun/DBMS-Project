@@ -1,5 +1,5 @@
 import * as ins from "./Admin.module.css";
-function Instructor(props) {
+function Admin(props) {
   return (
     <div className={ins.div1}>
         <h3>Admin Information</h3>
@@ -50,4 +50,4 @@ function Instructor(props) {
     </div>
   );
 }
-export default Instructor;
+export default Admin;

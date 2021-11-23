@@ -9,8 +9,10 @@ import {
   Button,
 } from "react-bootstrap";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 function AddCourse(props) {
+  const pushRoute = useNavigate();
   const codeRef = createRef();
   const nameRef = createRef();
   const creditRef = createRef();
@@ -30,7 +32,7 @@ function AddCourse(props) {
       description: descriptionRef.current.value,
     };
     axios.post("http://localhost:8000/course", data).then((res) => {
-      prompt("Course Data added successfully");
+      pushRoute("/admin");
       console.log("Data Submitted Successfully");
       console.log(res);
     });

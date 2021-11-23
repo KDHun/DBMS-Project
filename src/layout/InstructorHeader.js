@@ -15,6 +15,7 @@ function Indexlogin(props) {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}`)}}>Home</Nav.Link>
+        <Nav.Link onClick={(e) => {  e.preventDefault();  props.logout(); }} > Logout  </Nav.Link>
         <NavDropdown title="Semester" id="basic-nav-dropdown">
           <NavDropdown.Item onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}/class`)}}>Classes</NavDropdown.Item>
           <NavDropdown.Item onClick={(e) => {e.preventDefault(); authData.role&&pushRoute(`/${authData.role}/quiz`)}}>Quizzes</NavDropdown.Item>

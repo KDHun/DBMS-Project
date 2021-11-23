@@ -2,10 +2,13 @@ import { useContext } from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import authContext from "../context";
+import * as fn from  "./Headercss.module.css"
 function Indexlogin(props) {
   const authData = useContext(authContext);
   const pushRoute = useNavigate();
   return (
+    <div className={fn.fixnav}>
+
     <Navbar bg="dark" variant="dark" expand="lg" text="light">
       <Container>
         <Navbar.Brand href="#home">E-learning</Navbar.Brand>
@@ -17,7 +20,7 @@ function Indexlogin(props) {
                 e.preventDefault();
                 authData.role && pushRoute(`/${authData.role}`);
               }}
-            >
+              >
               Home
             </Nav.Link>
             <Nav.Link
@@ -25,7 +28,7 @@ function Indexlogin(props) {
                 e.preventDefault();
                 props.logout();
               }}
-            >
+              >
               Logout
             </Nav.Link>
             <NavDropdown title="Semester" id="basic-nav-dropdown">
@@ -34,7 +37,7 @@ function Indexlogin(props) {
                   e.preventDefault();
                   authData.role && pushRoute(`/${authData.role}/class`);
                 }}
-              >
+                >
                 Classes
               </NavDropdown.Item>
               <NavDropdown.Item
@@ -42,7 +45,7 @@ function Indexlogin(props) {
                   e.preventDefault();
                   authData.role && pushRoute(`/${authData.role}/enrolled`);
                 }}
-              >
+                >
                 Enrolled Courses
               </NavDropdown.Item>
             </NavDropdown>
@@ -52,7 +55,7 @@ function Indexlogin(props) {
                   e.preventDefault();
                   authData.role && pushRoute(`/${authData.role}/courses`);
                 }}
-              >
+                >
                 Courses
               </NavDropdown.Item>
               <NavDropdown.Item
@@ -60,7 +63,7 @@ function Indexlogin(props) {
                   e.preventDefault();
                   authData.role && pushRoute(`/${authData.role}/instructor`);
                 }}
-              >
+                >
                 Instructors
               </NavDropdown.Item>
             </NavDropdown>
@@ -68,6 +71,7 @@ function Indexlogin(props) {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+                </div>
   );
 }
 export default Indexlogin;

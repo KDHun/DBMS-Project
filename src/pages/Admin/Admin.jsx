@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import authContext from "../../context";
-import Admin from "../../components/Admin/Admin";
 import AdminHeader from "../../layout/AdminHeader";
 import AddStudent from "./AddStudent";
 import AddInstructor from "./AddInstructor";
@@ -10,7 +9,7 @@ import Student from "./Student";
 import Course from "../Student/Course";
 import { Navigate, Routes, Route } from "react-router";
 import Instructor from "../Student/Instructor";
-
+import Admin from "../../components/Admin/Admin"
 const AdminPage = (props) => {
   const me = useContext(authContext);
   if (me.role !== "admin") {
